@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_23_154913) do
+ActiveRecord::Schema.define(version: 2022_05_24_225441) do
 
   create_table "members", force: :cascade do |t|
     t.integer "tenant_id"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 2022_05_23_154913) do
     t.datetime "updated_at", null: false
     t.index ["tenant_id"], name: "index_members_on_tenant_id"
     t.index ["user_id"], name: "index_members_on_user_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "title"
+    t.string "details"
+    t.date "expected_completion_date"
+    t.integer "tenant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tenant_id"], name: "index_projects_on_tenant_id"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -54,6 +64,11 @@ ActiveRecord::Schema.define(version: 2022_05_23_154913) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
