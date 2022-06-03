@@ -37,4 +37,9 @@ module ApplicationHelper
     link_to artifact_key, "#{artifact_key}", class: 'main-link', target: 'new'
   end
 
+  def class_name_for_tenant_form(tenant)
+    retunr "cc_form"  if tenant.payment.blank?
+    ""
+  end
+
 end
