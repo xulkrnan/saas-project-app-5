@@ -19,6 +19,7 @@ gem 'devise'
 gem 'milia'
 gem 'aws-sdk'
 gem 'stripe'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 

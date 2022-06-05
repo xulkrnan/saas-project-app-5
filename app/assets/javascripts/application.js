@@ -15,3 +15,5 @@
 //= require twitter/bootstrap
 //= require bootstrap-datepicker
 //= require_tree .
+
+import 'bootstrap-icons/font/bootstrap-icons.css'
